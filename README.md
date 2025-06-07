@@ -1,2 +1,2 @@
 # msa-ui
-Website for MSA
+Website for MSA.

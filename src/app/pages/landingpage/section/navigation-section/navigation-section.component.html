@@ -2,29 +2,45 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
       <div class="flex items-center">
-        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+        <div
+          class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
           <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
           </svg>
         </div>
         <span class="ml-3 text-2xl font-bold text-gray-800">Maharashtra Silk Association</span>
       </div>
-      
-      <div class="hidden lg:flex items-center space-x-8">
-        <a href="#home" class="text-gray-700 hover:text-green-600 transition-colors duration-300 font-medium">Home</a>
-        <a href="#about" class="text-gray-700 hover:text-green-600 transition-colors duration-300 font-medium">About</a>
-        <a href="#services" class="text-gray-700 hover:text-green-600 transition-colors duration-300 font-medium">Services</a>
-        <a href="#projects" class="text-gray-700 hover:text-green-600 transition-colors duration-300 font-medium">Projects</a>
-        <a href="#blog" class="text-gray-700 hover:text-green-600 transition-colors duration-300 font-medium">Blog</a>
-        <a href="#contact" class="text-gray-700 hover:text-green-600 transition-colors duration-300 font-medium">Contact</a>
+
+      <!--Mobile Navigation Menu-->
+      @if (isMenuOpen) {
+      <div class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-start pt-20 lg:hidden z-50"
+        (click)="setMenuOpen(false)">
+        <div class="bg-white rounded-md shadow-lg p-6 space-y-4 min-w-[200px]" (click)="$event.stopPropagation()">
+          @for (nav of navOptions; track nav.href) {
+          <a [href]="nav.href"
+            class="block text-gray-700 hover:text-green-600 font-medium transition-colors duration-300"
+            (click)="setMenuOpen(false)">{{ nav.displayText }}</a>
+          }
+        </div>
       </div>
-      
-      <button class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg font-medium">
+      }
+
+
+      <!--Desktop Navigation Bar-->
+      <div class="hidden lg:flex items-center space-x-8">
+        @for (nav of navOptions; track nav.href) {
+        <a [href]="nav.href"
+          class="text-gray-700 hover:text-green-600 transition-colors duration-300 font-medium">{{nav.displayText}}</a>
+        }
+      </div>
+
+      <button
+        class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg font-medium">
         Join Us
       </button>
-      
+
       <!-- Mobile menu button -->
-      <button class="lg:hidden p-2">
+      <button class="lg:hidden p-2" (click)="onMobileMenuClick()">
         <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>

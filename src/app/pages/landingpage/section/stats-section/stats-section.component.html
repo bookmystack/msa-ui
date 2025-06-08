@@ -1,0 +1,38 @@
+<section hidden="true" class="py-20 bg-gradient-to-r from-green-600 to-emerald-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Making a Real Impact Together
+      </h2>
+      <p class="text-xl text-green-100 max-w-3xl mx-auto">
+        Our commitment to environmental excellence has delivered measurable results across thousands of projects worldwide.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="text-5xl md:text-6xl font-bold text-white mb-4" [attr.data-count]="stats.projectsCompleted">{{ stats.projectsCompleted }}+</div>
+        <div class="text-xl text-green-100 font-medium">Projects Completed</div>
+        <div class="text-green-200 mt-2">Across 50+ countries</div>
+      </div>
+      
+      <div class="text-center">
+        <div class="text-5xl md:text-6xl font-bold text-white mb-4" [attr.data-count]="stats.co2Reduced">{{ stats.co2Reduced }}M</div>
+        <div class="text-xl text-green-100 font-medium">Tons CO₂ Reduced</div>
+        <div class="text-green-200 mt-2">Environmental impact</div>
+      </div>
+      
+      <div class="text-center">
+        <div class="text-5xl md:text-6xl font-bold text-white mb-4" [attr.data-count]="stats.energySaved">{{ stats.energySaved }}%</div>
+        <div class="text-xl text-green-100 font-medium">Energy Savings</div>
+        <div class="text-green-200 mt-2">Average client reduction</div>
+      </div>
+      
+      <div class="text-center">
+        <div class="text-5xl md:text-6xl font-bold text-white mb-4" [attr.data-count]="stats.treesPlanted">{{ stats.treesPlanted }}K</div>
+        <div class="text-xl text-green-100 font-medium">Trees Planted</div>
+        <div class="text-green-200 mt-2">Reforestation efforts</div>
+      </div>
+    </div>
+  </div>
+</section>

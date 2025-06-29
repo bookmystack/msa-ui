@@ -1,0 +1,3 @@
+# Below are the unnecessary files not be copied to the nginx HTML folder while running COPY command in DOCKER file
+**/node_modules/
+**/Readme.md/

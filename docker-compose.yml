@@ -1,0 +1,14 @@
+services:
+  msa-ui:
+    container_name: msa-ui
+    build: .
+    image: msa_ui:v1
+    ports:
+      - 8080:8080
+    expose:
+      - 8080
+networks:
+  internalnet:
+    driver: bridge
+
+
